@@ -1,0 +1,29 @@
+
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<script>
+	function go(mode){
+		$.get('onoff', {mode: mode});
+	}
+</script>
+{% if temp %}
+  <h1>Current temperature: {{ temp }}!</h1>
+{% endif %}
+
+<h1>
+<div id="info1">Will be refreshed after </div>
+<a href="#" onclick="javascript:go(0)"> ON </a> <br />
+<a href="#" onclick="javascript:go(1)"> OFF </a> <br />
+</h1>
+
+
+<script>
+	var count = 10;
+	(function (){
+		$("#info1").html('Will be refreshed after ' + count + ' seconds');
+		if(count-- == 0)
+			window.location.reload();
+		setTimeout(arguments.callee, 1000);	
+	})();
+</script>

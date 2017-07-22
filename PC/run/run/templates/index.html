@@ -1,5 +1,6 @@
 
 <meta name="viewport" content="width=device-width, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="static/style.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 <script>
@@ -7,6 +8,8 @@
 		$.get('onoff', {mode: mode});
 	}
 </script>
+
+
 {% if temp %}
   <h1>Current temperature: {{ temp }}!</h1>
 {% endif %}
@@ -15,6 +18,16 @@
 <div id="info1">Will be refreshed after </div>
 <a href="#" onclick="javascript:go(0)"> ON </a> <br />
 <a href="#" onclick="javascript:go(1)"> OFF </a> <br />
+
+<div id="switches">
+
+<!-- Rounded switch -->
+<label class="switch">
+  <input type="checkbox">
+  <span class="slider round"></span>
+</label>
+
+</div>
 </h1>
 
 
